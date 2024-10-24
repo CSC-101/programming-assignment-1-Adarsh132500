@@ -1,5 +1,7 @@
 import data
 from data import Price
+from data import Rectangle
+from data import Point
 import hw1
 import unittest
 
@@ -43,6 +45,13 @@ class TestCases(unittest.TestCase):
 
 
     # Part 5
+    def test_rectangle_area_positive(self):
+        rect = Rectangle(Point(0, 2), Point(3, 0))
+        self.assertEqual(hw1.rectangle_area(rect), 6)
+
+    def test_rectangle_area_square(self):
+        rect = Rectangle(Point(0, 5), Point(5, 0))
+        self.assertEqual(hw1.rectangle_area(rect), 25)
 
 
     # Part 6

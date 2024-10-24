@@ -1,5 +1,6 @@
 import data
 from data import Price
+from data import Rectangle
 
 # Write your functions for each part in the space below.
 
@@ -38,8 +39,10 @@ def add_prices(price1: Price, price2: Price) -> Price:
     return Price(total_dollars, total_cents)
 
 # Part 5
-
-
+def rectangle_area(rect: Rectangle) -> float:
+    width = rect.bottom_right.x - rect.top_left.x
+    height = rect.top_left.y - rect.bottom_right.y
+    return abs(width * height)
 # Part 6
 
 
