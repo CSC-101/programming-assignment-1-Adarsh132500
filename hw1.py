@@ -43,8 +43,10 @@ def rectangle_area(rect: Rectangle) -> float:
     width = rect.bottom_right.x - rect.top_left.x
     height = rect.top_left.y - rect.bottom_right.y
     return abs(width * height)
-# Part 6
 
+# Part 6
+def books_by_author(name: str, books):
+    return [book for book in books if name in book.authors]
 
 # Part 7
 

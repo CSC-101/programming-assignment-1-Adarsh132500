@@ -2,6 +2,7 @@ import data
 from data import Price
 from data import Rectangle
 from data import Point
+from data import Book
 import hw1
 import unittest
 
@@ -43,7 +44,6 @@ class TestCases(unittest.TestCase):
         result = hw1.add_prices(price1, price2)
         self.assertEqual(result, Price(4, 25))
 
-
     # Part 5
     def test_rectangle_area_positive(self):
         rect = Rectangle(Point(0, 2), Point(3, 0))
@@ -53,9 +53,14 @@ class TestCases(unittest.TestCase):
         rect = Rectangle(Point(0, 5), Point(5, 0))
         self.assertEqual(hw1.rectangle_area(rect), 25)
 
-
     # Part 6
+    def test_books_by_author_single_author(self):
+        books = [Book(["King"], "It"), Book(["Orwell"], "1984")]
+        self.assertEqual(hw1.books_by_author("King", books), [Book(["King"], "It")])
 
+    def test_books_by_author_multiple_authors(self):
+        books = [Book(["King", "Orwell"], "It"), Book(["Rowling"], "Harry Potter")]
+        self.assertEqual(hw1.books_by_author("Orwell", books), [Book(["King", "Orwell"], "It")])
 
     # Part 7
 
