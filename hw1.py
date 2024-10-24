@@ -12,7 +12,8 @@ def vowel_count(s: str) -> int:
     return cnt
 
 # Part 2
-
+def short_lists(lst): # For some reason, my code does not work when I specify list parameter types, here is how I would write this line if it had worked: def short_lists(lst: list[list[int]]) -> list[list[int]]:
+    return [x for x in lst if len(x) == 2]
 
 # Part 3
 

@@ -14,7 +14,11 @@ class TestCases(unittest.TestCase):
         self.assertEqual(hw1.vowel_count("HeLLo"), 2)
 
     # Part 2
+    def test_short_lists_all_two_elements(self):
+        self.assertEqual(hw1.short_lists([[1, 2], [3, 4]]), [[1, 2], [3, 4]])
 
+    def test_short_lists_mixed(self):
+        self.assertEqual(hw1.short_lists([[1, 2], [3], [4, 5], [6, 7, 8]]), [[1, 2], [4, 5]])
 
     # Part 3
 
