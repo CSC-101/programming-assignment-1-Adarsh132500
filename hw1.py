@@ -1,4 +1,5 @@
 import data
+from data import Price
 
 # Write your functions for each part in the space below.
 
@@ -26,7 +27,15 @@ def ascending_pairs(lst): # Like the above part, my code does not work when I sp
     return result
 
 # Part 4
+def add_prices(price1: Price, price2: Price) -> Price:
+    total_cents = price1.cents + price2.cents
+    extra_dollars = 0
+    if total_cents >= 100:
+        extra_dollars = total_cents // 100
+        total_cents = total_cents - 100
 
+    total_dollars = price1.dollars + price2.dollars + extra_dollars
+    return Price(total_dollars, total_cents)
 
 # Part 5
 

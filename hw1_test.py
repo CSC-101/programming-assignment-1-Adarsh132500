@@ -1,4 +1,5 @@
 import data
+from data import Price
 import hw1
 import unittest
 
@@ -28,6 +29,17 @@ class TestCases(unittest.TestCase):
         self.assertEqual(hw1.ascending_pairs([[1, 2], [3], [6, 5], [7, 8, 9]]), [[1, 2], [3], [5, 6], [7, 8, 9]])
 
     # Part 4
+    def test_add_prices_no_carry(self):
+        price1 = Price(5, 50)
+        price2 = Price(3, 25)
+        result = hw1.add_prices(price1, price2)
+        self.assertEqual(result, Price(8, 75))
+
+    def test_add_prices_with_carry(self):
+        price1 = Price(1, 75)
+        price2 = Price(2, 50)
+        result = hw1.add_prices(price1, price2)
+        self.assertEqual(result, Price(4, 25))
 
 
     # Part 5
