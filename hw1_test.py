@@ -3,6 +3,8 @@ from data import Price
 from data import Rectangle
 from data import Point
 from data import Book
+from data import Circle
+import math
 import hw1
 import unittest
 
@@ -63,7 +65,15 @@ class TestCases(unittest.TestCase):
         self.assertEqual(hw1.books_by_author("Orwell", books), [Book(["King", "Orwell"], "It")])
 
     # Part 7
+    def test_circle_bound_square(self):
+        rect = Rectangle(Point(0, 1), Point(1, 0))
+        result = hw1.circle_bound(rect)
+        self.assertEqual(result, Circle(Point(0.5, 0.5), math.sqrt(0.5)))
 
+    def test_circle_bound_non_square(self):
+        rect = Rectangle(Point(-1, 1), Point(2, -2))
+        result = hw1.circle_bound(rect)
+        self.assertEqual(result, Circle(Point(0.5, -0.5), math.sqrt(4.5)))
 
     # Part 8
 

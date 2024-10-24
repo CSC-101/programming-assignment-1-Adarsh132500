@@ -1,6 +1,9 @@
 import data
+import math
 from data import Price
 from data import Rectangle
+from data import Circle
+from data import Point
 
 # Write your functions for each part in the space below.
 
@@ -49,7 +52,15 @@ def books_by_author(name: str, books):
     return [book for book in books if name in book.authors]
 
 # Part 7
+def circle_bound(rect: Rectangle) -> Circle:
+    center_x = (rect.top_left.x + rect.bottom_right.x) / 2
+    center_y = (rect.top_left.y + rect.bottom_right.y) / 2
+    center = Point(center_x, center_y)
 
+    corner = rect.top_left
+    radius = math.sqrt((center_x - corner.x) ** 2 + (center_y - corner.y) ** 2)
+
+    return Circle(center, radius)
 
 # Part 8
 
