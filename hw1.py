@@ -4,6 +4,7 @@ from data import Price
 from data import Rectangle
 from data import Circle
 from data import Point
+from data import Employee
 
 # Write your functions for each part in the space below.
 
@@ -63,5 +64,20 @@ def circle_bound(rect: Rectangle) -> Circle:
     return Circle(center, radius)
 
 # Part 8
+def below_pay_average(employees): # problem with compiler; here's the real statement def below_pay_average(employees: list[Employee]) -> list[str]:
+    if not employees:
+        return []
 
+    total_pay = 0
+    for employee in employees:
+        total_pay += employee.pay_rate
+
+    average_pay = total_pay / len(employees)
+
+    below_average_employees = []
+    for employee in employees:
+        if employee.pay_rate < average_pay:
+            below_average_employees.append(employee.name)
+
+    return below_average_employees
 

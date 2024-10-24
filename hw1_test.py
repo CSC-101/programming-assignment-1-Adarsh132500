@@ -4,6 +4,8 @@ from data import Rectangle
 from data import Point
 from data import Book
 from data import Circle
+from data import Employee
+
 import math
 import hw1
 import unittest
@@ -76,8 +78,28 @@ class TestCases(unittest.TestCase):
         self.assertEqual(result, Circle(Point(0.5, -0.5), math.sqrt(4.5)))
 
     # Part 8
+    def test_below_pay_average_with_employees(self):
+        employees = [
+            Employee("Alice", 5000),
+            Employee("Bob", 4000),
+            Employee("Charlie", 6000),
+            Employee("Diana", 3000)
+        ]
+        result = hw1.below_pay_average(employees)
+        self.assertEqual(result, ["Bob", "Diana"])
 
+    def test_below_pay_average_no_one_below(self):
+        employees = [
+            Employee("Alice", 4000),
+            Employee("Bob", 4000)
+        ]
+        result = hw1.below_pay_average(employees)
+        self.assertEqual(result, [])
 
+    def test_below_pay_average_empty_list(self):
+        employees = []
+        result = hw1.below_pay_average(employees)
+        self.assertEqual(result, [])
 
 
 
