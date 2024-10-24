@@ -16,7 +16,14 @@ def short_lists(lst): # For some reason, my code does not work when I specify li
     return [x for x in lst if len(x) == 2]
 
 # Part 3
-
+def ascending_pairs(lst): # Like the above part, my code does not work when I specify list parameter types: def ascending_pairs(lst: list[list[int]]) -> list[list[int]]:
+    result = []
+    for x in lst:
+        if len(x) == 2:
+            result.append(sorted(x))
+        else:
+            result.append(x)
+    return result
 
 # Part 4
 

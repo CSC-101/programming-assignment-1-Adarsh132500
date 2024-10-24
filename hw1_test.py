@@ -21,7 +21,11 @@ class TestCases(unittest.TestCase):
         self.assertEqual(hw1.short_lists([[1, 2], [3], [4, 5], [6, 7, 8]]), [[1, 2], [4, 5]])
 
     # Part 3
+    def test_ascending_pairs_all_two_elements(self):
+        self.assertEqual(hw1.ascending_pairs([[3, 1], [4, 2]]), [[1, 3], [2, 4]])
 
+    def test_ascending_pairs_mixed(self):
+        self.assertEqual(hw1.ascending_pairs([[1, 2], [3], [6, 5], [7, 8, 9]]), [[1, 2], [3], [5, 6], [7, 8, 9]])
 
     # Part 4
 
