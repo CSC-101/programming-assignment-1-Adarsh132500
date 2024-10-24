@@ -7,7 +7,11 @@ import unittest
 
 class TestCases(unittest.TestCase):
     # Part 1
+    def test_vowel_count_lowercase(self):
+        self.assertEqual(hw1.vowel_count("hello"), 2)
 
+    def test_vowel_count_mixed_case(self):
+        self.assertEqual(hw1.vowel_count("HeLLo"), 2)
 
     # Part 2
 
